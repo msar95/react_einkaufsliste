@@ -1,6 +1,8 @@
 import React from "react";
 import { IngredientList } from "./components/IngredientList";
 
+import { sumRecipes } from "./recipeStateService";
+
 const mockRecipes = [
   {
     id: 1,
@@ -67,7 +69,7 @@ export class App extends React.Component {
     return (
       <React.Fragment>
         <h1>Einkaufsliste</h1>
-        <IngredientList ingredients={mockRecipes[0].ingredients} /> 
+        <IngredientList ingredients={sumRecipes(mockRecipes)} /> 
       </React.Fragment>
     );
   }
