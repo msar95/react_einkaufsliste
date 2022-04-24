@@ -64,14 +64,32 @@ const mockRecipes = [
 export class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      recipes : mockRecipes
+    }
+
+    this.handleAddRecipe= this.handleAddRecipe.bind(this);
+  }
+
+  handleAddRecipe(newRecipe) {
+    this.setState(currentState => {
+      return{
+        ...currentState,
+        recipes : [
+          ...currentState.recipes,
+          newRecipe
+        ]
+      }
+    })
   }
 
   render() {
     return (
       <React.Fragment>
         <h1>Einkaufsliste</h1>
-        <IngredientList ingredients={sumRecipes(mockRecipes)} /> 
-        <RecipeForm />
+        <IngredientList ingredients={sumRecipes(this.state.recipes)} /> 
+        <RecipeForm onSave={ this.handleAddRecipe } />
       </React.Fragment>
     );
   }
