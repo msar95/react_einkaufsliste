@@ -1,5 +1,6 @@
 import React from "react";
 import { IngredientList } from "./components/IngredientList";
+import { RecipeForm } from "./RecipeForm/RecipeForm";
 
 import { sumRecipes } from "./recipeStateService";
 
@@ -70,6 +71,7 @@ export class App extends React.Component {
       <React.Fragment>
         <h1>Einkaufsliste</h1>
         <IngredientList ingredients={sumRecipes(mockRecipes)} /> 
+        <RecipeForm />
       </React.Fragment>
     );
   }
