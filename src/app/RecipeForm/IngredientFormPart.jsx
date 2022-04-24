@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export class IngredientFormPart extends React.Component {
   render() {
     return (
@@ -11,7 +12,6 @@ export class IngredientFormPart extends React.Component {
           Menge: <input type="number" />
         </label>
         <label>
-          Unit:
           <select>
             <option>Stück</option>
             <option>Gramm</option>
