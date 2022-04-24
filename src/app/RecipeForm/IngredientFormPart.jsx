@@ -1,5 +1,7 @@
 import React from "react";
 
+import { NumericInput } from "../../components/NumericInput";
+
 export class IngredientFormPart extends React.Component {
   render() {
     const { ingredient, onChange } = this.props; // Object-Destructuring -> accessing props that are defined in recipeForm
@@ -15,9 +17,7 @@ export class IngredientFormPart extends React.Component {
           />
         </label>
         <label>
-          Menge:{" "}
-          <input
-            type="number"
+          Menge:<NumericInput
             name='amount'
             value={ingredient.amount}
             onChange={(event) => onChange(event, ingredient)}
