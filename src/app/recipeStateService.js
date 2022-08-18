@@ -11,7 +11,7 @@ export function sumRecipes(recipes) {
       if (existingIngredient) {
         existingIngredient.amount += ingredient.amount;
       } else {
-        list.push(ingredient);
+        list.push({... ingredient}); // arbeiten mit Immuatability, anstatt mit original wird mit kopie aller properties gearbeitet
       }
       return list;
     }, []);
